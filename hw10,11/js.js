@@ -128,9 +128,12 @@ for (let i = 1; i <= 100; i++) {
   const result = i;
   if (usersFigure > i ** 2) {
     supRes = (figuresSum += " ".repeat(3) + result).trim();
+  } else {
+    console.log("Try again");
+    break;
   }
 }
-console.log(supRes.trim());
+console.log(supRes);
 
 // Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе).
 const usersNextFigure = prompt("Enter a positive number");
