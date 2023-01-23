@@ -61,12 +61,15 @@ if (usersOperator === "add") {
 // show me how to do it here if it possible.
 
 // Homework 8
-const usersAge = prompt("Enter your age");
+const usersBornYear = prompt("Input a year when u were born");
 const usersCity = prompt("Enter the city you live in");
 const usersSport = prompt("Enter your favourite kind of sport");
+const usersAge = 2023 - usersBornYear;
 
-if (usersAge === "" || usersCity === "" || usersSport === "") {
+if (usersBornYear === "" || usersCity === "" || usersSport === "") {
   alert("Please, fill every field");
+} else if (usersBornYear > 2022 || usersBornYear < 0) {
+  alert("Please, input correct value");
 } else if (usersAge === null) {
   alert("Regretfully, u dont want to share your age with us :(");
 } else if (usersCity === null) {
