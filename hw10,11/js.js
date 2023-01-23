@@ -1,86 +1,106 @@
 // Homework 10
 // Вивести на сторінку в один рядок через кому числа від 10 до 20.
-// let figures = "";
-// for (let i = 10; i <= 20; i++) {
-//   //   figures += i + ", ";
-//   figures += i === 20 ? i : i + ", ";
-//   alert(figures.trim());
-// }
+let figures = "";
+for (let i = 10; i <= 20; i++) {
+  figures += i === 20 ? i : i + ", ";
+}
+console.log(figures.trim());
 
 // Вивести квадрати чисел від 10 до 20.
-// for (let i = 10; i <= 20; i++) {
-//   alert(i ** 2);
-// }
+let squareRes = "";
+for (let i = 10; i <= 20; i++) {
+  squareRes += " ".repeat(2) + i ** 2;
+}
+console.log(squareRes.trim());
 
 // Вивести таблицю множення на 7.
-// let sumSeven = "";
-// for (let i = 1; i <= 10; i++) {
-//   const result = i * 7;
-//   sumSeven += " ".repeat(3) + result;
-//   alert(sumSeven.trim());
-// }
+let sumSeven = "";
+for (let i = 1; i <= 10; i++) {
+  const result = i * 7;
+  sumSeven += " ".repeat(3) + result;
+}
+console.log(sumSeven.trim());
 
 // Знайти суму всіх цілих чисел від 1 до 15.
-// let sum = 0;
-// for (let i = 1; i <= 15; i++) {
-//   alert((sum += i));
-// }
+let sum = 0;
+let sumRes;
+for (let i = 1; i <= 15; i++) {
+  sumRes = sum += i;
+}
+console.log(sumRes);
 
 // Знайти добуток усіх цілих чисел від 15 до 35.
-// let sumMult = 1;
-// for (let i = 15; i <= 35; i++) {
-//   alert((sumMult *= i));
-// }
+let sumMult = 1;
+let multRes;
+for (let i = 15; i <= 35; i++) {
+  multRes = sumMult *= i;
+}
+console.log(multRes);
 
 // Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
-// let sumAvvrg = 0;
-// for (let i = 1; i <= 501; i++) {
-//   i === 501 ? alert(sumAvvrg / 500) : alert((sumAvvrg += i));
-// } // it looks very shitty i am not sure :D
+let sumAvvrg = 0;
+for (let i = 1; i <= 501; i++) {
+  i === 501 ? sumAvvrg / 500 : (sumAvvrg += i);
+}
+console.log(sumAvvrg / 500);
 
 // Вивести суму лише парних чисел в діапазоні від 30 до 80.
-// let sumEven = 0;
-// for (let i = 30; i <= 80; i++) {
-//   if (i % 2 !== 0) continue;
-//   alert((sumEven += i));
-// }
+let sumEven = 0;
+let sumPairNumb;
+for (let i = 30; i <= 80; i++) {
+  if (i % 2 !== 0) continue;
+  sumPairNumb = sumEven += i;
+}
+console.log(sumPairNumb);
 
 // Вивести всі числа в діапазоні від 100 до 200 кратні 3.
-// for (let i = 100; i <= 200; i++) {
-//   if (i % 3 !== 0) continue;
-//   alert(i);
-// }
+let divRes = "";
+for (let i = 100; i <= 200; i++) {
+  if (i % 3 !== 0) continue;
+  divRes += " ".repeat(3) + i;
+}
+console.log(divRes.trim());
 
 // Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
-// let naturalNumber = 100;
-// for (let i = 1; i <= 100; i++) {
-//   if (naturalNumber % i !== 0) continue;
-//   alert(i);
-// }
+let naturalNumber = 100;
+let pairedReses = "";
+for (let i = 1; i <= 100; i++) {
+  if (naturalNumber % i !== 0) continue;
+  const result = i;
+  pairedReses += " ".repeat(3) + result;
+}
+console.log(pairedReses.trim());
 
 // Визначити кількість його парних дільників.
-// let naturalNextNumber = 100;
-// let pairNaturalNumber = 0;
-// for (let i = 1; i <= 100; i++) {
-//   if (naturalNextNumber % i !== 0) continue;
-//   if (i % 2 == 0) alert(pairNaturalNumber + i);
-// }
+let naturalNextNumber = 100;
+let pairNaturalNumber = 0;
+let finRes = " ";
+for (let i = 1; i <= 100; i++) {
+  if (naturalNextNumber % i !== 0) continue;
+  if (i % 2 == 0) finRes += " ".repeat(3) + i;
+}
+console.log(finRes.trim());
 
 // Знайти суму його парних дільників.
-// let naturalNumberSecond = 100;
-// let pairNaturalNumberSecond = 0;
-// for (let i = 1; i <= 100; i++) {
-//   if (naturalNumberSecond % i !== 0) continue;
-//   if (i % 2 == 0) alert((pairNaturalNumberSecond += i));
-// }
+let naturalNumberSecond = 100;
+let pairNaturalNumberSecond = 0;
+let sumParRes = "";
+for (let i = 1; i <= 100; i++) {
+  if (naturalNumberSecond % i !== 0) continue;
+  if (i % 2 == 0) sumParRes = pairNaturalNumberSecond += i;
+}
+console.log(sumParRes);
 
 // Надрукувати повну таблицю множення від 1 до 10.
-// for (let i = 1; i <= 10; i++) {
-//   for (let j = 1; j <= 10; j++) {
-//     const result = i * j;
-//     alert(`${i} * ${j} = ${result}`);
-//   }
-// }
+let multTables = "";
+for (let i = 1; i <= 10; i++) {
+  for (let j = 1; j <= 10; j++) {
+    const result = i * j + "";
+    multTables += " ".repeat(5 - result.length) + result;
+  }
+  multTables += "\n";
+}
+console.log(multTables);
 
 // Homework 11
 // Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….).
@@ -97,7 +117,6 @@ let sumDol = " ";
 for (let i = 10; i <= 100; i += 10) {
   let result = dollar * i + "";
   sumDol += " ".repeat(3) + result;
-  // if (i == 100) console.log(sumDol.trim());
 }
 console.log(sumDol.trim());
 
@@ -117,7 +136,7 @@ console.log(supRes.trim());
 const usersNextFigure = prompt("Enter a positive number");
 let isPrime = true;
 if (usersNextFigure == 1) {
-  alert("1 is neither prime nor composite number.");
+  console.log("1 is neither prime nor composite number.");
 } else if (usersNextFigure > 1) {
   for (let i = 2; i < usersNextFigure; i++) {
     if (usersNextFigure % i == 0) {
@@ -126,12 +145,12 @@ if (usersNextFigure == 1) {
     }
   }
   if (isPrime) {
-    alert(`${usersNextFigure} is a prime number`);
+    console.log(`${usersNextFigure} is a prime number`);
   } else {
-    alert(`${usersNextFigure} is a not prime number`);
+    console.log(`${usersNextFigure} is a not prime number`);
   }
 } else {
-  alert("Your figure isn't prime. For a pity... Try a new one");
+  console.log("Your figure isn't prime. For a pity... Try a new one");
 }
 
 // Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
@@ -141,5 +160,5 @@ while (someRandomFigure % 3 == 0) {
   someRandomFigure /= 3;
 }
 someRandomFigure == 1
-  ? alert("U can get this figure")
-  : alert("U can't get this figure");
+  ? console.log("U can get this figure")
+  : console.log("U can't get this figure");
