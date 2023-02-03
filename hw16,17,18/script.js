@@ -42,35 +42,35 @@ function averageArithmetic(array) {
 console.log(averageArithmetic(anyArray));
 
 // Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
-// const usersX = prompt("Input your X value");
-// const usersY = prompt("Input your Y value");
-// const usersSign = prompt("Input your sign (+, -, *, /, %, ^)");
+const usersX = prompt("Input your X value");
+const usersY = prompt("Input your Y value");
+const usersSign = prompt("Input your sign (+, -, *, /, %, ^)");
 
-// function doMath(x, y, znak) {
-//   switch (znak) {
-//     case "+":
-//       console.log(`${+x + +y}`);
-//       break;
-//     case "-":
-//       console.log(`${x - y}`);
-//       break;
-//     case "*":
-//       console.log(`${x * y}`);
-//       break;
-//     case "/":
-//       console.log(`${x / y}`);
-//       break;
-//     case "%":
-//       console.log(`${x % y}`);
-//       break;
-//     case "^":
-//       console.log(`${x ** y}`);
-//       break;
-//     default:
-//       console.log("Please, input correct sign from offered list");
-//   }
-// }
-// console.log(doMath(usersX, usersY, usersSign));
+function doMath(x, y, znak) {
+  switch (znak) {
+    case "+":
+      console.log(`${+x + +y}`);
+      break;
+    case "-":
+      console.log(`${x - y}`);
+      break;
+    case "*":
+      console.log(`${x * y}`);
+      break;
+    case "/":
+      console.log(`${x / y}`);
+      break;
+    case "%":
+      console.log(`${x % y}`);
+      break;
+    case "^":
+      console.log(`${x ** y}`);
+      break;
+    default:
+      console.log("Please, input correct sign from offered list");
+  }
+}
+console.log(doMath(usersX, usersY, usersSign));
 
 // Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
 // const mainArrLength = prompt("Input main array's length");
