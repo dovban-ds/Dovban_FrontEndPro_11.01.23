@@ -73,21 +73,36 @@ function doMath(x, y, znak) {
 console.log(doMath(usersX, usersY, usersSign));
 
 // Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
-// const mainArrLength = prompt("Input main array's length");
-// const secondaryArrLength = prompt("Input secondary array's length");
-// const arraysMainValues = prompt("Input array's values");
+const arrLength = Number(prompt("Input array's length"));
+const secArrLength = Number(prompt("Input inner array's length"));
+const empty = [];
+
+function usersArray(array, secArr) {
+  for (let i = 0; i < array; i++) {
+    const realEmpty = [];
+    for (let j = 0; j < secArr; j++) {
+      const info = prompt(`Input element number ${j}`);
+      realEmpty.push(info);
+    }
+    empty.push(realEmpty);
+  }
+  return empty;
+}
+
+console.log(usersArray(arrLength, secArrLength));
 
 // Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
-const usersString = prompt("Your string here");
-const usersSymbols = prompt("Your symbols to removing");
 
-function removeLetters(string, symbol) {
-  symbol.split("");
-  return console.log(string.replaceAll(symbol, ""));
+const userString = prompt("Input your text");
+const userSymbol = prompt("Letters to remove");
+
+function deleteLetters(str, letters) {
+  let arr = str.split("");
+  for (let i = 0; i < letters.length; i++) {
+    arr = arr.filter((element) => {
+      return element !== letters[i];
+    });
+  }
+  return arr.join("");
 }
-// function removeLetters(string, symbol) {
-//   symbol.split("");
-//   return console.log(string.split(symbol).join(""));
-// }
-
-console.log(removeLetters(usersString, usersSymbols));
+console.log(deleteLetters(userString, userSymbol));
