@@ -42,52 +42,67 @@ function averageArithmetic(array) {
 console.log(averageArithmetic(anyArray));
 
 // Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
-// const usersX = prompt("Input your X value");
-// const usersY = prompt("Input your Y value");
-// const usersSign = prompt("Input your sign (+, -, *, /, %, ^)");
+const usersX = prompt("Input your X value");
+const usersY = prompt("Input your Y value");
+const usersSign = prompt("Input your sign (+, -, *, /, %, ^)");
 
-// function doMath(x, y, znak) {
-//   switch (znak) {
-//     case "+":
-//       console.log(`${+x + +y}`);
-//       break;
-//     case "-":
-//       console.log(`${x - y}`);
-//       break;
-//     case "*":
-//       console.log(`${x * y}`);
-//       break;
-//     case "/":
-//       console.log(`${x / y}`);
-//       break;
-//     case "%":
-//       console.log(`${x % y}`);
-//       break;
-//     case "^":
-//       console.log(`${x ** y}`);
-//       break;
-//     default:
-//       console.log("Please, input correct sign from offered list");
-//   }
-// }
-// console.log(doMath(usersX, usersY, usersSign));
+function doMath(x, y, znak) {
+  switch (znak) {
+    case "+":
+      console.log(`${+x + +y}`);
+      break;
+    case "-":
+      console.log(`${x - y}`);
+      break;
+    case "*":
+      console.log(`${x * y}`);
+      break;
+    case "/":
+      console.log(`${x / y}`);
+      break;
+    case "%":
+      console.log(`${x % y}`);
+      break;
+    case "^":
+      console.log(`${x ** y}`);
+      break;
+    default:
+      console.log("Please, input correct sign from offered list");
+  }
+}
+console.log(doMath(usersX, usersY, usersSign));
 
 // Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
-// const mainArrLength = prompt("Input main array's length");
-// const secondaryArrLength = prompt("Input secondary array's length");
-// const arraysMainValues = prompt("Input array's values");
+const arrLength = Number(prompt("Input array's length"));
+const secArrLength = Number(prompt("Input inner array's length"));
+const empty = [];
+
+function usersArray(array, secArr) {
+  for (let i = 0; i < array; i++) {
+    const realEmpty = [];
+    for (let j = 0; j < secArr; j++) {
+      const info = prompt(`Input element number ${j}`);
+      realEmpty.push(info);
+    }
+    empty.push(realEmpty);
+  }
+  return empty;
+}
+
+console.log(usersArray(arrLength, secArrLength));
 
 // Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
-const usersString = prompt("Your string here");
-const usersSymbols = prompt("Your symbols to removing");
 
-function removeLetters(string, symbol) {
-  symbol.split("");
-  return console.log(string.replaceAll(symbol, ""));
+const userString = prompt("Input your text");
+const userSymbol = prompt("Letters to remove");
+
+function deleteLetters(str, letters) {
+  let arr = str.split("");
+  for (let i = 0; i < letters.length; i++) {
+    arr = arr.filter((element) => {
+      return element !== letters[i];
+    });
+  }
+  return arr.join("");
 }
-// function removeLetters(string, symbol) {
-//   symbol.split("");
-//   return console.log(string.split(symbol).join(""));
-// }
-
-console.log(removeLetters(usersString, usersSymbols));
+console.log(deleteLetters(userString, userSymbol));
