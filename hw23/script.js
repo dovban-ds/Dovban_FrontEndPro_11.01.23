@@ -38,9 +38,9 @@ const toyotaFeature = function () {
 };
 
 bmw.specTurn = bmwFeature;
-lamborghini.specDoors = bmwFeature;
-mitsubishi.specRally = bmwFeature;
-toyota.specCulture = bmwFeature;
+lamborghini.specDoors = lamboFeature;
+mitsubishi.specRally = mitsFeature;
+toyota.specCulture = toyotaFeature;
 
 console.log(bmw);
 console.log(mitsubishi);
