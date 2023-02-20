@@ -15,7 +15,9 @@ class Apartment {
 
 class House {
   flats = [];
-  maxFlats = 5;
+  constructor(maxFlats) {
+    this.maxFlats = maxFlats;
+  }
   checking(apartment) {
     if (this.flats.length < this.maxFlats) {
       this.flats.push(apartment);
@@ -46,7 +48,7 @@ fourthFlat.addResident(fourthResident);
 fifthFlat.addResident(fifthResident);
 sixthFlat.addResident(sixthResident);
 
-const home = new House();
+const home = new House(5);
 home.checking(firstFlat);
 home.checking(secondFlat);
 home.checking(thirdFlat);
@@ -102,3 +104,97 @@ thirdCar.addOwner(thirdDriver);
 firstCar.showInfo();
 secondCar.showInfo();
 thirdCar.showInfo();
+
+// Homework 27
+class Student {
+  constructor(name, surname, birth) {
+    this.name = name;
+    this.surname = surname;
+    this.birth = birth;
+    this.marks = [];
+    this.attendance = new Array(25);
+  }
+  grades(grades) {
+    this.marks.push(grades);
+  }
+  getInfo() {
+    const age = 2023 - this.birth;
+    const sum = this.marks.reduce((acc, item) => (acc += item));
+    const average = sum / this.marks.length;
+    return average;
+  }
+
+  present() {
+    let index = this.attendance.findIndex((item) => item === undefined);
+    if (index !== -1) {
+      this.attendance[index] = true;
+    }
+  }
+  absent() {
+    let index = this.attendance.findIndex((item) => item === undefined);
+    if (index !== -1) {
+      this.attendance[index] = false;
+    }
+  }
+  attend() {
+    const lessons = this.attendance.filter((item) => item !== undefined);
+    const totalLessons = lessons.length;
+    const success = lessons.filter((item) => item === true);
+    const amount = success.length;
+    const result = amount / totalLessons;
+    return result;
+  }
+  summary() {
+    if (this.getInfo() > 90 && this.attend() > 0.9) {
+      console.log("Well done!");
+    } else if (this.getInfo() < 90 && this.attend() < 0.9) {
+      console.log("Bastard");
+    } else if (this.getInfo() < 90 || this.attend() < 0.9) {
+      console.log("Good job, but it could be better next time...");
+    }
+  }
+}
+
+const student1 = new Student("Franc", "Muligh", 2003);
+
+student1.present();
+student1.present();
+student1.present();
+
+student1.grades(100);
+student1.grades(100);
+student1.grades(100);
+
+console.log(student1);
+console.log(student1.summary());
+
+const student2 = new Student("Mike", "Weezley", 2000);
+
+student2.present();
+student2.present();
+student2.present();
+student2.absent();
+student2.absent();
+student2.absent();
+student2.absent();
+
+student2.grades(100);
+student2.grades(100);
+student2.grades(100);
+
+console.log(student2);
+console.log(student2.summary());
+
+const student3 = new Student("Ricardo", "Adams", 2006);
+
+student3.present();
+student3.absent();
+student3.absent();
+student3.absent();
+student3.absent();
+student3.absent();
+
+student3.grades(80);
+
+console.log(student3);
+console.log(student3.summary());
