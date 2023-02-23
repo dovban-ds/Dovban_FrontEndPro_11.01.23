@@ -5,7 +5,11 @@ function time(milisec) {
   const actualDay = new Date();
   const userData = new Date(milisec);
 
-  if (userData.getDate() === actualDay.getDate()) {
+  if (
+    userData.getDate() === actualDay.getDate() &&
+    userData.getFullYear() === actualDay.getFullYear() &&
+    userData.getMonth() === actualDay.getMonth()
+  ) {
     return true;
   } else {
     return false;
