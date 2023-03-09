@@ -21,12 +21,11 @@ map.set(userJane, "How your kids doing Jane ?");
 
 function greetUser(obj) {
   const result = map.get(obj);
-  console.log(result);
-  return;
+  return result;
 }
 
-greetUser(userBob);
-greetUser(userJane);
+console.log(greetUser(userBob));
+console.log(greetUser(userJane));
 
 // 3) Создать функцию по превращению Map в object или object в Map в зависимости от того что было передано в функцию.
 function transform(obj) {
