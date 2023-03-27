@@ -1,7 +1,7 @@
 const slidesContainer = document.querySelector(".slider");
 const slide = document.querySelector(".slide");
-const prevButton = document.querySelector(".left");
-const nextButton = document.querySelector(".right");
+const prevButton = document.querySelector(".hleft");
+const nextButton = document.querySelector(".hright");
 
 const hLeft = document.querySelector(".hleft");
 const hRight = document.querySelector(".hright");
