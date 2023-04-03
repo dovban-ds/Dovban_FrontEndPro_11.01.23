@@ -58,67 +58,67 @@ function doAll(event) {
     goods.forEach((item) => {
       item.style.display = "none";
     });
-  } else if (target.textContent.includes("BMW")) {
+  } else if (target.textContent === "BMW 328i") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[0].style.display = "";
-  } else if (target.textContent.includes("Toyota")) {
+  } else if (target.textContent === "Toyota Supra") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[1].style.display = "";
-  } else if (target.textContent.includes("Lancer")) {
+  } else if (target.textContent === "Mitsubishi Lancer X Evo") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[2].style.display = "";
-  } else if (target.textContent.includes("Laptop")) {
+  } else if (target.textContent === "Laptop") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[3].style.display = "";
-  } else if (target.textContent.includes("Gaming")) {
+  } else if (target.textContent === "Gaming PC") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[4].style.display = "";
-  } else if (target.textContent.includes("Tablet")) {
+  } else if (target.textContent === "Tablet") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[5].style.display = "";
-  } else if (target.textContent.includes("Junk")) {
+  } else if (target.textContent === "Junk food") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[6].style.display = "";
-  } else if (target.textContent.includes("Healthy")) {
+  } else if (target.textContent === "Healthy food") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[7].style.display = "";
-  } else if (target.textContent.includes("Sea")) {
+  } else if (target.textContent === "Sea food") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[8].style.display = "";
-  } else if (target.textContent.includes("Hair")) {
+  } else if (target.textContent === "Hair paste") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[9].style.display = "";
-  } else if (target.textContent.includes("Tooth")) {
+  } else if (target.textContent === "Toothpaste") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[10].style.display = "";
-  } else if (target.textContent.includes("Shaving")) {
+  } else if (target.textContent === "Shaving gel") {
     goods.forEach((item) => {
       item.style.display = "none";
     });
     goods[11].style.display = "";
-  } else if (target.textContent.includes("Add")) {
+  } else if (target.textContent === "Add to cart") {
     modal.style.display = "flex";
     buttonClose.addEventListener("click", () => {
       modal.style.display = "none";
@@ -133,6 +133,8 @@ function doAll(event) {
     for (let item of catalogs) {
       item.style.display = "none";
     }
+  } else {
+    return;
   }
 }
 
