@@ -1,0 +1,199 @@
+body {
+  background: rgb(5, 10, 156);
+  background: linear-gradient(
+    90deg,
+    rgba(5, 10, 156, 1) 4%,
+    rgba(164, 64, 168, 1) 49%,
+    rgba(124, 22, 195, 1) 91%
+  );
+}
+
+.container {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 150px auto 0;
+  border: 1px solid black;
+  background-color: rgb(204, 214, 221);
+  border-radius: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(90, 87, 47);
+}
+
+.left-block {
+  flex-basis: 25%;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.left-block div[class] {
+  display: flex;
+  transition: background-color 1.5s;
+  padding: 8px 0;
+}
+
+.left-block div[class]:hover {
+  cursor: pointer;
+  background-color: rgb(173, 173, 173);
+}
+
+i {
+  margin: 0 0 0 20px;
+  flex-basis: 12%;
+}
+
+.center-block {
+  flex-basis: 25%;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.center-block div[class] {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0;
+  width: 100%;
+  align-items: center;
+}
+
+ul li {
+  display: flex;
+  transition: background-color 1.5s;
+  width: 100%;
+  justify-content: center;
+}
+
+ul li:hover {
+  cursor: pointer;
+  background-color: rgb(173, 173, 173);
+}
+
+ul li:nth-child(2n) {
+  margin: 16px 0;
+}
+
+.right-block {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-block div[class~="goods"] {
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-block {
+  margin: 16px auto;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.image-block img {
+  max-width: 100%;
+}
+
+.text-block {
+  max-width: 100%;
+  font-weight: 600;
+}
+
+button {
+  align-self: center;
+  margin: 32px 0;
+  font-weight: 600;
+  background-color: rgb(27, 196, 4);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color 1s;
+  color: rgb(59, 58, 31);
+}
+
+button:hover {
+  background-color: rgb(40, 131, 27);
+}
+
+@media screen and (max-width: 1200px) {
+  .right-block div[class~="goods"] {
+    max-width: 80%;
+  }
+
+  .image-block {
+    margin: 16px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .image-block img {
+    max-width: 100%;
+  }
+
+  .left-block {
+    flex-basis: 25%;
+    font-size: 24px;
+  }
+  .center-block {
+    flex-basis: 35%;
+  }
+
+  .right-block {
+    flex-basis: 40%;
+    font-size: 14px;
+  }
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: -150px auto 0;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: aliceblue;
+  border-radius: 16px;
+  padding: 16px;
+  width: 40%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(90, 87, 47);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.modal-description {
+  margin: 15px;
+}
+
+.close {
+  cursor: pointer;
+  align-self: flex-end;
+}
