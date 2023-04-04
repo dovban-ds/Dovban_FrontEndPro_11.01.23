@@ -207,7 +207,14 @@ tr6.append(th6, td6);
 
 function handler(submit) {
   th1.textContent = "Fullname";
-  td1.textContent = fullName.value;
+
+  if (fullName.value.length < 1) {
+    submit.preventDefault();
+    alert("Input correct fullname!");
+    return;
+  } else {
+    td1.textContent = fullName.value;
+  }
 
   const dateStr = birth.value;
   const arr = dateStr.split(".");
