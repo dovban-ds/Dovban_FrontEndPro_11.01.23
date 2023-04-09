@@ -135,14 +135,22 @@ function doAll(event) {
       clonedNodes = [];
       if (lastAddedItem) {
         lastAddedItem.remove();
+        liArray.pop();
+        localStorage.setItem("liTextArray", JSON.stringify(liArray));
       }
+      // dataArray.pop();
+      // localStorage.setItem("dataCollection");
       modal.style.display = "none";
     });
     modal.addEventListener("click", (event) => {
       if (event.target !== modal) return;
       if (lastAddedItem) {
         lastAddedItem.remove();
+        liArray.pop();
+        localStorage.setItem("liTextArray", JSON.stringify(liArray));
       }
+      // dataArray.pop();
+      // localStorage.setItem("dataCollection");
       clonedNodes.forEach((node) => node.remove());
       clonedNodes = [];
       modal.style.display = "none";
@@ -346,6 +354,7 @@ cart.addEventListener("click", () => {
     btn.forEach((item) => {
       item.style.display = "";
     });
+    location.reload();
   }
 });
 const catalogNames = document.querySelectorAll(".catalog-name");
@@ -368,9 +377,21 @@ window.addEventListener("load", () => {
       span.classList.add("span");
       span.innerHTML = "&#215";
       li.append(span);
+      span.addEventListener("click", () => {
+        for (let item of goods) {
+          item.style.display = "none";
+        }
+        const index = parsedLiTextArray.indexOf(liText);
+        console.log(liText);
+        console.log(index);
+        parsedLiTextArray.splice(index, 1);
+        localStorage.setItem("liTextArray", JSON.stringify(parsedLiTextArray));
+        li.remove();
+      });
       li.addEventListener("click", () => {
         const div = document.createElement("div");
         const p = document.createElement("p");
+        console.log(parsedDataArray);
         for (let data of parsedDataArray[index]) {
           p.append(data);
         }
@@ -411,12 +432,6 @@ window.addEventListener("load", () => {
         }
       });
       list.append(li);
-      span.addEventListener("click", () => {
-        const index = parsedLiTextArray.indexOf(liText);
-        parsedLiTextArray.splice(index, 1);
-        localStorage.setItem("liTextArray", JSON.stringify(parsedLiTextArray));
-        li.remove();
-      });
     });
     liArray.push(...parsedLiTextArray);
     dataArray.push(...parsedDataArray);
@@ -482,6 +497,7 @@ function addButtonListeners() {
       });
       li.append(span);
       li.classList.add("li");
+
       list.append(li);
       lastAddedItem = li;
       //////
