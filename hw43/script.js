@@ -138,8 +138,6 @@ function doAll(event) {
         liArray.pop();
         localStorage.setItem("liTextArray", JSON.stringify(liArray));
       }
-      // dataArray.pop();
-      // localStorage.setItem("dataCollection");
       modal.style.display = "none";
     });
     modal.addEventListener("click", (event) => {
@@ -149,8 +147,6 @@ function doAll(event) {
         liArray.pop();
         localStorage.setItem("liTextArray", JSON.stringify(liArray));
       }
-      // dataArray.pop();
-      // localStorage.setItem("dataCollection");
       clonedNodes.forEach((node) => node.remove());
       clonedNodes = [];
       modal.style.display = "none";
@@ -386,12 +382,14 @@ window.addEventListener("load", () => {
         console.log(index);
         parsedLiTextArray.splice(index, 1);
         localStorage.setItem("liTextArray", JSON.stringify(parsedLiTextArray));
+        //parsedDataArray.splice(index, 1);
+        //localStorage.setItem("dataCollection", JSON.stringify(parsedDataArray));
+        // нормально ли добавить очистку dataCollection тут, если в консоли летят варнинги после этого? Но зато не собирается в storage хлам
         li.remove();
       });
       li.addEventListener("click", () => {
         const div = document.createElement("div");
         const p = document.createElement("p");
-        console.log(parsedDataArray);
         for (let data of parsedDataArray[index]) {
           p.append(data);
         }
@@ -500,7 +498,6 @@ function addButtonListeners() {
 
       list.append(li);
       lastAddedItem = li;
-      //////
       liArray.push(li.textContent);
       localStorage.setItem("liTextArray", JSON.stringify(liArray));
     });
