@@ -1,0 +1,84 @@
+body {
+  background-color: #e0dede;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin: 32px auto 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#number {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 0px;
+  padding: 4px;
+}
+
+#number::-webkit-outer-spin-button,
+#number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#number[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#submit {
+  padding: 8px;
+  border-radius: 8px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 1s;
+}
+
+#submit:hover {
+  cursor: pointer;
+  background-color: #b8b8b8;
+}
+
+.post {
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin: 48px auto;
+  font-weight: 700;
+}
+
+.post-hidden {
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.post-body {
+  margin: 24px 0;
+}
+
+.btn {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #46a321;
+  max-width: 20vw;
+  margin: 16px auto;
+  color: #fff;
+  transition: background-color 1s;
+}
+
+.btn:hover {
+  background-color: #35791a;
+  cursor: pointer;
+}
