@@ -1,0 +1,20 @@
+body {
+  background: #a19b9b;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.weather-case {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 120px;
+}
+
+.div-style {
+  background-color: rgb(213, 221, 228);
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
