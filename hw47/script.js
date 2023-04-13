@@ -23,6 +23,11 @@ button.addEventListener("click", () => {
   fetch(`https://jsonplaceholder.typicode.com/posts/${id.value}/comments`)
     .then((response) => response.json())
     .then((json) => {
+      if (commentsBar.style.display === "") {
+        commentsBar.style.display = "none";
+      } else {
+        commentsBar.style.display = "";
+      }
       if (commentsBar.querySelector("li")) {
         return;
       }
