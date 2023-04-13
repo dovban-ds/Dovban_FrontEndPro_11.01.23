@@ -18,7 +18,8 @@ function doForecast(city) {
         </div>
         `;
       weatherCase.innerHTML += HTML;
-    });
+    })
+    .catch((err) => alert(err));
 }
 
 doForecast("LVIV");
