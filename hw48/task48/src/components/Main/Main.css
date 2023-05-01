@@ -1,0 +1,10 @@
+.main {
+  background-color: #b66161;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  height: calc(100vh - 151px);
+  width: 85%;
+  border-left: 1px solid black;
+}
